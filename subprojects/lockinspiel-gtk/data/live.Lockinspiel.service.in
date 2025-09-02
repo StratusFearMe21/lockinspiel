@@ -1,3 +1,3 @@
 [D-BUS Service]
 Name=@app-id@
-Exec=@bindir@/lockinspiel-gtk --gapplication-service
+Exec=@bindir@/lockinspiel --gapplication-service

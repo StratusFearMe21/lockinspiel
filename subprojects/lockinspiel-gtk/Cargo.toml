@@ -1,5 +1,5 @@
 [package]
-name = "lockinspiel-gtk"
+name = "lockinspiel"
 authors = ["Isaac Mills <rooster0055@protonmail.com>"]
 edition = "2021"
 
@@ -9,6 +9,10 @@ gtk = { version = "0.10", package = "gtk4", features = ["v4_8"] }
 adw = { version = "0.8.0", package = "libadwaita", features = ["v1_5"] }
 tracing = "0.1.37"
 tracing-subscriber = "0.3"
+shadow-rs = { git = "https://github.com/StratusFearMe21/shadow-rs", branch = "write-to-string" }
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(meson)'] }
+
+[build-dependencies]
+shadow-rs = { git = "https://github.com/StratusFearMe21/shadow-rs", branch = "write-to-string" }

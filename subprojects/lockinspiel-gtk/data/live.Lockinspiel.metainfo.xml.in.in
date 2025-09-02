@@ -15,12 +15,12 @@
       <caption>Main window</caption>
     </screenshot>
   </screenshots>
-  <url type="homepage">https://github.com/StratusFearMe21/lockinspiel</url>
+  <url type="homepage">https://lockinspiel.live</url>
   <url type="bugtracker">https://github.com/StratusFearMe21/lockinspiel/issues</url>
   <!-- Source code repository -->
   <url type="vcs-browser">https://github.com/StratusFearMe21/lockinspiel</url>
   <!-- Translation repository -->
-  <url type="translate">https://github.com/StratusFearMe21/lockinspiel/-/tree/master/po</url>
+  <url type="translate">https://github.com/StratusFearMe21/lockinspiel/tree/master/subprojects/lockinspiel-gtk/po</url>
   <!-- Open Age Ratings Service:
        https://hughsie.github.io/oars/generate.html
   -->

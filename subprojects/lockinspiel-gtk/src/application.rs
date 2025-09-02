@@ -1,5 +1,7 @@
 use adw::prelude::AdwDialogExt;
 use gettextrs::gettext;
+use gtk::glib::GStringBuilder;
+use shadow_rs::shadow;
 use tracing::{debug, info};
 
 use adw::subclass::prelude::*;
@@ -10,6 +12,8 @@ use crate::window::LockinspielApplicationWindow;
 use crate::{APP_ID, PKGDATADIR, PROFILE, VERSION};
 
 const APP_NAME: &str = "Lockinspiel";
+
+shadow!(build);
 
 mod imp {
     use super::*;
@@ -122,12 +126,21 @@ impl LockinspielApplication {
     }
 
     fn show_about_dialog(&self) {
+        let mut debug_info = GStringBuilder::new("");
+
+        std::fmt::Write::write_fmt(
+            &mut debug_info,
+            format_args!("{}", build::BuildInfoDisplay::default()),
+        )
+        .unwrap();
+
         let dialog = adw::AboutDialog::builder()
             .application_name(APP_NAME)
             .application_icon(APP_ID)
             .developer_name("Isaac Mills")
             .license_type(gtk::License::Gpl30)
-            .website("https://github.com/StratusFearMe21/lockinspiel/")
+            .website("https://lockinspiel.live")
+            .debug_info(debug_info.into_string())
             .issue_url("https://github.com/StratusFearMe21/lockinspiel/issues")
             .version(VERSION)
             .translator_credits(gettext("translator-credits"))
