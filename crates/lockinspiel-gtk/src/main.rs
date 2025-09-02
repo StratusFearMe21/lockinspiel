@@ -22,7 +22,7 @@ pub const RESOURCES_FILE: &str = "";
 pub const VERSION: &str = "";
 
 #[cfg(meson)]
-include!(concat!(env!("MESON_BUILD_ROOT"), "/src/config.rs"));
+include!(concat!(env!("PACKAGE_BUILD_ROOT"), "/src/config.rs"));
 
 fn main() -> glib::ExitCode {
     // Initialize logger

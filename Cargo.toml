@@ -1,5 +1,5 @@
 [workspace]
-members = ["subprojects/lockinspiel-gtk"]
+members = ["crates/lockinspiel-gtk"]
 resolver = "3"
 
 [profile.release]

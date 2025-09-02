@@ -1,5 +1,5 @@
 [package]
-name = "lockinspiel"
+name = "lockinspiel-gtk"
 authors = ["Isaac Mills <rooster0055@protonmail.com>"]
 edition = "2021"
 

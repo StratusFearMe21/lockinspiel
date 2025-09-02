@@ -794,7 +794,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "lockinspiel"
+name = "lockinspiel-gtk"
 version = "0.0.0"
 dependencies = [
  "gettext-rs",

@@ -1,12 +1,3 @@
-project(
-  'lockinspiel',
-  'rust',
-  version: '0.1.0',
-  meson_version: '>= 0.59',
-  license: 'GPL-3.0-or-later',
-)
-
-
 i18n = import('i18n')
 gnome = import('gnome')
 
@@ -20,13 +11,6 @@ find_program('glib-compile-resources')
 glib_compile_schemas = find_program('glib-compile-schemas')
 desktop_file_validate = find_program('desktop-file-validate', required: false)
 appstreamcli = find_program('appstreamcli', required: false)
-cargo = find_program('cargo')
-
-version = meson.project_version()
-
-prefix = get_option('prefix')
-bindir = prefix / get_option('bindir')
-localedir = prefix / get_option('localedir')
 
 datadir = prefix / get_option('datadir')
 pkgdatadir = datadir / meson.project_name()
@@ -49,15 +33,28 @@ else
   application_id = base_id
 endif
 
-if get_option('debug')
-  # Setup pre-commit hook for ensuring coding style is always consistent
-  message('Setting up git pre-commit hook..')
-  run_command('cp', '-f', 'hooks/pre-commit.hook', '.git/hooks/pre-commit', check: false)
-endif
-
 subdir('data')
 subdir('po')
 subdir('src')
+
+custom_target(
+  'cargo-build',
+  build_by_default: true,
+  build_always_stale: true,
+  output: member,
+  console: true,
+  install: true,
+  install_dir: bindir,
+  depends: resources,
+  env: cargo_env,
+  command: [
+    cargo, 'rustc',
+    '-p', member,
+    cargo_options,
+    '&&',
+    'cp', package_build_dir / rust_target / member, '@OUTPUT@',
+  ]
+)
 
 gnome.post_install(
   gtk_update_icon_cache: true,
