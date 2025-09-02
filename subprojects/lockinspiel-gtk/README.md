@@ -10,9 +10,7 @@
 
 ## Screenshots
 
-<div align="center">
-![screenshot](https://raw.githubusercontent.com/StratusFearMe21/lockinspiel/refs/heads/master/subprojects/lockinspiel-gtk/data/resources/screenshots/screenshot1.png)
-</div>
+![screenshot](data/resources/screenshots/screenshot1.png)
 
 ## Hack on Lockinspiel
 
