@@ -1,12 +1,15 @@
+use adw::prelude::AdwDialogExt;
 use gettextrs::gettext;
 use tracing::{debug, info};
 
+use adw::subclass::prelude::*;
 use gtk::prelude::*;
-use gtk::subclass::prelude::*;
 use gtk::{gdk, gio, glib};
 
-use crate::window::ExampleApplicationWindow;
+use crate::window::LockinspielApplicationWindow;
 use crate::{APP_ID, PKGDATADIR, PROFILE, VERSION};
+
+const APP_NAME: &str = "Lockinspiel";
 
 mod imp {
     use super::*;
@@ -14,22 +17,22 @@ mod imp {
     use std::cell::OnceCell;
 
     #[derive(Debug, Default)]
-    pub struct ExampleApplication {
-        pub window: OnceCell<WeakRef<ExampleApplicationWindow>>,
+    pub struct LockinspielApplication {
+        pub window: OnceCell<WeakRef<LockinspielApplicationWindow>>,
     }
 
     #[glib::object_subclass]
-    impl ObjectSubclass for ExampleApplication {
-        const NAME: &'static str = "ExampleApplication";
-        type Type = super::ExampleApplication;
-        type ParentType = gtk::Application;
+    impl ObjectSubclass for LockinspielApplication {
+        const NAME: &'static str = "LockinspielApplication";
+        type Type = super::LockinspielApplication;
+        type ParentType = adw::Application;
     }
 
-    impl ObjectImpl for ExampleApplication {}
+    impl ObjectImpl for LockinspielApplication {}
 
-    impl ApplicationImpl for ExampleApplication {
+    impl ApplicationImpl for LockinspielApplication {
         fn activate(&self) {
-            debug!("GtkApplication<ExampleApplication>::activate");
+            debug!("AdwApplication<LockinspielApplication>::activate");
             self.parent_activate();
             let app = self.obj();
 
@@ -39,7 +42,7 @@ mod imp {
                 return;
             }
 
-            let window = ExampleApplicationWindow::new(&app);
+            let window = LockinspielApplicationWindow::new(&app);
             self.window
                 .set(window.downgrade())
                 .expect("Window already set.");
@@ -48,7 +51,7 @@ mod imp {
         }
 
         fn startup(&self) {
-            debug!("GtkApplication<ExampleApplication>::startup");
+            debug!("AdwApplication<LockinspielApplication>::startup");
             self.parent_startup();
             let app = self.obj();
 
@@ -61,17 +64,18 @@ mod imp {
         }
     }
 
-    impl GtkApplicationImpl for ExampleApplication {}
+    impl AdwApplicationImpl for LockinspielApplication {}
+    impl GtkApplicationImpl for LockinspielApplication {}
 }
 
 glib::wrapper! {
-    pub struct ExampleApplication(ObjectSubclass<imp::ExampleApplication>)
-        @extends gio::Application, gtk::Application,
+    pub struct LockinspielApplication(ObjectSubclass<imp::LockinspielApplication>)
+        @extends gio::Application, gtk::Application, adw::Application,
         @implements gio::ActionMap, gio::ActionGroup;
 }
 
-impl ExampleApplication {
-    fn main_window(&self) -> ExampleApplicationWindow {
+impl LockinspielApplication {
+    fn main_window(&self) -> LockinspielApplicationWindow {
         self.imp().window.get().unwrap().upgrade().unwrap()
     }
 
@@ -112,27 +116,26 @@ impl ExampleApplication {
         }
     }
 
-    fn authors() -> Vec<&'static str> {
+    fn developers() -> Vec<&'static str> {
         // Authors are defined in Cargo.toml
         env!("CARGO_PKG_AUTHORS").split(":").collect()
     }
 
     fn show_about_dialog(&self) {
-        let dialog = gtk::AboutDialog::builder()
-            .logo_icon_name(APP_ID)
-            // FIXME Insert your license of choice here
-            // .license_type(gtk::License::MitX11)
-            // FIXME Insert your website here
-            // .website("https://gitlab.gnome.org/bilelmoussaoui/my-awesome-app/")
+        let dialog = adw::AboutDialog::builder()
+            .application_name(APP_NAME)
+            .application_icon(APP_ID)
+            .developer_name("Isaac Mills")
+            .license_type(gtk::License::Gpl30)
+            .website("https://github.com/StratusFearMe21/lockinspiel/")
+            .issue_url("https://github.com/StratusFearMe21/lockinspiel/issues")
             .version(VERSION)
-            .transient_for(&self.main_window())
             .translator_credits(gettext("translator-credits"))
-            .modal(true)
-            .authors(Self::authors())
+            .developers(Self::developers())
             .artists(vec!["Isaac Mills"])
             .build();
 
-        dialog.present();
+        dialog.present(Some(&self.main_window()));
     }
 
     pub fn run(&self) -> glib::ExitCode {
@@ -144,11 +147,11 @@ impl ExampleApplication {
     }
 }
 
-impl Default for ExampleApplication {
+impl Default for LockinspielApplication {
     fn default() -> Self {
         glib::Object::builder()
             .property("application-id", APP_ID)
-            .property("resource-base-path", "/com/belmoussaoui/GtkRustTemplate")
+            .property("resource-base-path", "/live/Lockinspiel")
             .build()
     }
 }

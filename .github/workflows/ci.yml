@@ -18,7 +18,7 @@ jobs:
           override: true
           components: rustfmt
       - name: Create blank versions of configured file
-        run: echo -e "" >> src/config.rs
+        run: echo -e "" >> subprojects/lockinspiel-gtk/src/config.rs
       - name: Run cargo fmt
         run: cargo fmt --all -- --check
 

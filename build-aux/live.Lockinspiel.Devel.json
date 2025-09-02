@@ -36,7 +36,7 @@
     },
     "modules": [
         {
-            "name": "lockinspiel-gtk",
+            "name": "lockinspiel",
             "buildsystem": "meson",
             "run-tests": true,
             "config-opts": [

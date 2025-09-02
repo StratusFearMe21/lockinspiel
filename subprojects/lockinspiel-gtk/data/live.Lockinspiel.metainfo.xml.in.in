@@ -3,30 +3,24 @@
 <component type="desktop-application">
   <id>@app-id@</id>
   <metadata_license>CC0</metadata_license>
-  <!-- FIXME Insert your license of choice here -->
-  <!-- <project_license>MIT</project_license> -->
+  <project_license>GPL-3.0+</project_license>
   <name>Lockinspiel</name>
-  <!-- FIXME Set the project summary -->
-  <summary>Write a GTK + Rust application</summary>
-  <!-- FIXME Set the project description -->
+  <summary>Helping you lock tf in!</summary>
   <description>
-    <p>A boilerplate template for GTK + Rust. It uses Meson as a build system and has flatpak support by default.</p>
+    <p>Helping you lock tf in!</p>
   </description>
   <screenshots>
     <screenshot type="default">
-      <!-- FIXME Set the project git url and replace the screenshot -->
-      <image>https://gitlab.gnome.org/bilelmoussaoui/lockinspiel-gtk/raw/master/data/resources/screenshots/screenshot1.png</image>
+      <image>https://raw.githubusercontent.com/StratusFearMe21/lockinspiel/refs/heads/master/subprojcets/lockinspiel-gtk/data/resources/screenshots/screenshot1.png</image>
       <caption>Main window</caption>
     </screenshot>
   </screenshots>
-  <!-- FIXME Set the project git url -->
-  <url type="homepage">https://gitlab.gnome.org/bilelmoussaoui/lockinspiel-gtk</url>
-  <!-- FIXME Set the project git url -->
-  <url type="bugtracker">https://gitlab.gnome.org/bilelmoussaoui/lockinspiel-gtk/issues</url>
+  <url type="homepage">https://github.com/StratusFearMe21/lockinspiel</url>
+  <url type="bugtracker">https://github.com/StratusFearMe21/lockinspiel/issues</url>
   <!-- Source code repository -->
-  <url type="vcs-browser">https://gitlab.gnome.org/bilelmoussaoui/lockinspiel-gtk</url>
+  <url type="vcs-browser">https://github.com/StratusFearMe21/lockinspiel</url>
   <!-- Translation repository -->
-  <url type="translate">https://gitlab.gnome.org/bilelmoussaoui/lockinspiel-gtk/-/tree/master/po</url>
+  <url type="translate">https://github.com/StratusFearMe21/lockinspiel/-/tree/master/po</url>
   <!-- Open Age Ratings Service:
        https://hughsie.github.io/oars/generate.html
   -->
@@ -40,14 +34,14 @@
   <developer id="gnome.org">
     <name translate="no">Isaac Mills</name>
   </developer>
-  <!-- 
+  <!--
     Branding colors:
     https://docs.flathub.org/docs/for-app-authors/metainfo-guidelines/#brand-color
   -->
   <branding>
     <color type="primary" scheme_preference="light">#ff00ff</color>
     <color type="primary" scheme_preference="dark">#993d3d</color>
-  </branding>  
+  </branding>
   <update_contact>rooster0055@protonmail.com</update_contact>
   <translation type="gettext">@gettext-package@</translation>
   <launchable type="desktop-id">@app-id@.desktop</launchable>

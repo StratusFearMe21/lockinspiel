@@ -4,7 +4,7 @@ mod window;
 use gettextrs::{gettext, LocaleCategory};
 use gtk::{gio, glib};
 
-use self::application::ExampleApplication;
+use self::application::LockinspielApplication;
 
 #[cfg(not(meson))]
 pub const APP_ID: &str = "";
@@ -38,6 +38,6 @@ fn main() -> glib::ExitCode {
     let res = gio::Resource::load(RESOURCES_FILE).expect("Could not load gresource file");
     gio::resources_register(&res);
 
-    let app = ExampleApplication::default();
+    let app = LockinspielApplication::default();
     app.run()
 }

@@ -6,8 +6,7 @@
 # Lockinspiel
 
 <img src="data/icons/live.Lockinspiel.svg" width="128" height="128" />
-<!-- FIXME Set project description -->
-<p>Write a GTK + Rust summary</p>
+<p>Helping you lock tf in!</p>
 
 ## Screenshots
 
@@ -26,7 +25,7 @@ for building GNOME apps with Flatpak and GNOME Builder.
 
 <!-- Helping to translate Lockinspiel or add support to a new language is very -->
 <!-- welcome. You can find everything you need at: -->
-<!-- [l10n.gnome.org/module/lockinspiel-gtk/](https://l10n.gnome.org/module/lockinspiel-gtk/) -->
+<!-- [l10n.gnome.org/module/lockinspiel/](https://l10n.gnome.org/module/lockinspiel/) -->
 
 ## Code Of Conduct
 

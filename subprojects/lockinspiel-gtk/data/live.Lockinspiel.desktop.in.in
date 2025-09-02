@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=Lockinspiel
-# FIXME Set the project summary
-Comment=Write a GTK + Rust application
+Comment=Helping you lock tf in!
 Type=Application
 Exec=lockinspiel-gtk
 Terminal=false

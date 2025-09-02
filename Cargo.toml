@@ -1,16 +1,6 @@
-[package]
-name = "lockinspiel-gtk"
-authors = ["Isaac Mills <rooster0055@protonmail.com>"]
-edition = "2021"
+[workspace]
+members = ["subprojects/lockinspiel-gtk"]
+resolver = "3"
 
 [profile.release]
 lto = true
-
-[dependencies]
-gettext-rs = { version = "0.7", features = ["gettext-system"] }
-gtk = { version = "0.10", package = "gtk4", features = ["v4_8"] }
-tracing = "0.1.37"
-tracing-subscriber = "0.3"
-
-[lints.rust]
-unexpected_cfgs = { level = "warn", check-cfg = ['cfg(meson)'] }

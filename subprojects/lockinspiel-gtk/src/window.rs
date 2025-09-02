@@ -1,35 +1,33 @@
+use adw::subclass::prelude::*;
 use gtk::prelude::*;
-use gtk::subclass::prelude::*;
 use gtk::{gio, glib};
 
-use crate::application::ExampleApplication;
+use crate::application::LockinspielApplication;
 use crate::{APP_ID, PROFILE};
 
 mod imp {
+
     use super::*;
 
     #[derive(Debug, gtk::CompositeTemplate)]
     #[template(resource = "/live/Lockinspiel/ui/window.ui")]
-    pub struct ExampleApplicationWindow {
-        #[template_child]
-        pub headerbar: TemplateChild<gtk::HeaderBar>,
+    pub struct LockinspielApplicationWindow {
         pub settings: gio::Settings,
     }
 
-    impl Default for ExampleApplicationWindow {
+    impl Default for LockinspielApplicationWindow {
         fn default() -> Self {
             Self {
-                headerbar: TemplateChild::default(),
                 settings: gio::Settings::new(APP_ID),
             }
         }
     }
 
     #[glib::object_subclass]
-    impl ObjectSubclass for ExampleApplicationWindow {
-        const NAME: &'static str = "ExampleApplicationWindow";
-        type Type = super::ExampleApplicationWindow;
-        type ParentType = gtk::ApplicationWindow;
+    impl ObjectSubclass for LockinspielApplicationWindow {
+        const NAME: &'static str = "LockinspielApplicationWindow";
+        type Type = super::LockinspielApplicationWindow;
+        type ParentType = adw::ApplicationWindow;
 
         fn class_init(klass: &mut Self::Class) {
             klass.bind_template();
@@ -41,7 +39,7 @@ mod imp {
         }
     }
 
-    impl ObjectImpl for ExampleApplicationWindow {
+    impl ObjectImpl for LockinspielApplicationWindow {
         fn constructed(&self) {
             self.parent_constructed();
             let obj = self.obj();
@@ -56,8 +54,8 @@ mod imp {
         }
     }
 
-    impl WidgetImpl for ExampleApplicationWindow {}
-    impl WindowImpl for ExampleApplicationWindow {
+    impl WidgetImpl for LockinspielApplicationWindow {}
+    impl WindowImpl for LockinspielApplicationWindow {
         // Save window state on delete event
         fn close_request(&self) -> glib::Propagation {
             if let Err(err) = self.obj().save_window_size() {
@@ -69,19 +67,20 @@ mod imp {
         }
     }
 
-    impl ApplicationWindowImpl for ExampleApplicationWindow {}
+    impl AdwApplicationWindowImpl for LockinspielApplicationWindow {}
+    impl ApplicationWindowImpl for LockinspielApplicationWindow {}
 }
 
 glib::wrapper! {
-    pub struct ExampleApplicationWindow(ObjectSubclass<imp::ExampleApplicationWindow>)
-        @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow,
+    pub struct LockinspielApplicationWindow(ObjectSubclass<imp::LockinspielApplicationWindow>)
+        @extends gtk::Widget, gtk::Window, gtk::ApplicationWindow, adw::ApplicationWindow,
         @implements gio::ActionMap, gio::ActionGroup,
                     gtk::Root, gtk::Native, gtk::ShortcutManager,
                     gtk::Accessible, gtk::Buildable, gtk::ConstraintTarget;
 }
 
-impl ExampleApplicationWindow {
-    pub fn new(app: &ExampleApplication) -> Self {
+impl LockinspielApplicationWindow {
+    pub fn new(app: &LockinspielApplication) -> Self {
         glib::Object::builder().property("application", app).build()
     }
 

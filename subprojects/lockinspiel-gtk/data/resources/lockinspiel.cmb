@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE cambalache-project SYSTEM "cambalache-project.dtd">
+<!-- Created with Cambalache 0.96.1 -->
+<cambalache-project version="0.96.0" target_tk="gtk-4.0">
+  <gresources filename="resources.gresource.xml" sha256="91b9a5e950ffa3fab46a5576944044209b74bb2868d8570e6463617701be8462"/>
+  <css filename="style.css"/>
+  <ui filename="ui/shortcuts.ui" sha256="82b5eed3474ba56f09c30b354fee29b0393cf570bfbe1bd7acbf4e62a6f2b1a4"/>
+  <ui template-class="LockinspielApplicationWindow" filename="ui/window.ui" sha256="35ab679bcbbfdd30248be2e4a4d4fe73956fd38ec472250aa2624de66ef0faa3"/>
+</cambalache-project>

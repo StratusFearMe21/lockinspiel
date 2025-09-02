@@ -6,12 +6,10 @@
          xmlns="http://usefulinc.com/ns/doap#">
 
   <name xml:lang="en">Lockinspiel</name>
-  <!-- FIXME Set the project summary -->
   <shortdesc xml:lang="en">
-    Write a GTK + Rust application
+    Helping you lock tf in!
   </shortdesc>
-  <!-- FIXME Set the project git url -->
-  <bug-database rdf:resource="https://gitlab.gnome.org/bilelmoussaoui/lockinspiel-gtk/" />
+  <bug-database rdf:resource="https://github.com/StratusFearMe21/lockinspiel/" />
 
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
   <programming-language>Rust</programming-language>
@@ -21,12 +19,11 @@
       <foaf:name>Isaac Mills</foaf:name>
       <foaf:mbox rdf:resource="mailto:rooster0055@protonmail.com" />
       <!-- FIXME Set your gnome user id here -->
-      <!-- <gnome:userid>gnome_user_id</gnome:userid> -->
+      <!-- <gnome:userid>fnmain</gnome:userid> -->
       <foaf:account>
         <foaf:OnlineAccount>
-          <!-- FIXME Set your gitlab handle here, rdf:resource also accepts github.com or gitlab.com -->
-          <!-- <foaf:accountServiceHomepage rdf:resource="https://gitlab.gnome.org" /> -->
-          <!-- <foaf:accountName>gitlab_user_handle</foaf:accountName> -->
+          <foaf:accountServiceHomepage rdf:resource="https://github.com" />
+          <foaf:accountName>StratusFearMe21</foaf:accountName>
         </foaf:OnlineAccount>
       </foaf:account>
     </foaf:Person>
