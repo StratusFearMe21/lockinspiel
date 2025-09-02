@@ -11,7 +11,7 @@
 ## Screenshots
 
 <div align="center">
-![screenshot](subprojects/lockinspiel-gtk/data/resources/screenshots/screenshot1.png)
+![screenshot](data/resources/screenshots/screenshot1.png)
 </div>
 
 ## Hack on Lockinspiel
