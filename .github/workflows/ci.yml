@@ -30,7 +30,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
       with:
-        bundle: palette.flatpak
-        manifest-path: org.gnome.zbrown.Palette.yml
+        bundle: lockinspiel-gtk.flatpak
+        manifest-path: build-aux/live.lockinspiel.Devel.json
         run-tests: true
         cache-key: flatpak-builder-${{ github.sha }}
