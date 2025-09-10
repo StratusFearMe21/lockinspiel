@@ -1,11 +1,11 @@
 <!-- FIXME Uncomment once published at Flathub -->
-<!-- <a href="https://flathub.org/apps/details/live.Lockinspiel"> -->
+<!-- <a href="https://flathub.org/apps/details/live.lockinspiel"> -->
 <!-- <img src="https://flathub.org/api/badge?svg&locale=en&light" width="190px" /> -->
 <!-- </a> -->
 
 # Lockinspiel
 
-<img src="data/icons/live.Lockinspiel.svg" width="128" height="128" />
+<img src="data/icons/live.lockinspiel.svg" width="128" height="128" />
 <p>Helping you lock tf in!</p>
 
 ## Screenshots

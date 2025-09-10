@@ -1,6 +1,6 @@
-data/live.Lockinspiel.desktop.in.in
-data/live.Lockinspiel.gschema.xml.in
-data/live.Lockinspiel.metainfo.xml.in.in
+data/live.lockinspiel.desktop.in.in
+data/live.lockinspiel.gschema.xml.in
+data/live.lockinspiel.metainfo.xml.in.in
 data/resources/ui/shortcuts.ui
 data/resources/ui/window.ui
 src/application.rs

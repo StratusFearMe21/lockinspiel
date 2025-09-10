@@ -10,6 +10,7 @@ adw = { version = "0.8.0", package = "libadwaita", features = ["v1_5"] }
 tracing = "0.1.37"
 tracing-subscriber = "0.3"
 shadow-rs = { git = "https://github.com/StratusFearMe21/shadow-rs", branch = "write-to-string" }
+lockinspiel-common = { version = "0.1.0", path = "../lockinspiel-common" }
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(meson)'] }

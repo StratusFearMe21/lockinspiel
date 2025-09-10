@@ -10,7 +10,7 @@ mod imp {
     use super::*;
 
     #[derive(Debug, gtk::CompositeTemplate)]
-    #[template(resource = "/live/Lockinspiel/ui/window.ui")]
+    #[template(resource = "/live/lockinspiel/ui/window.ui")]
     pub struct LockinspielApplicationWindow {
         pub settings: gio::Settings,
     }

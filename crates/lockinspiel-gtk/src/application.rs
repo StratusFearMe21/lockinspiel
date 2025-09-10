@@ -110,7 +110,7 @@ impl LockinspielApplication {
 
     fn setup_css(&self) {
         let provider = gtk::CssProvider::new();
-        provider.load_from_resource("/live/Lockinspiel/style.css");
+        provider.load_from_resource("/live/lockinspiel/style.css");
         if let Some(display) = gdk::Display::default() {
             gtk::style_context_add_provider_for_display(
                 &display,
@@ -164,7 +164,7 @@ impl Default for LockinspielApplication {
     fn default() -> Self {
         glib::Object::builder()
             .property("application-id", APP_ID)
-            .property("resource-base-path", "/live/Lockinspiel")
+            .property("resource-base-path", "/live/lockinspiel")
             .build()
     }
 }

@@ -5,7 +5,7 @@ dependency('glib-2.0', version: '>= 2.66')
 dependency('gio-2.0', version: '>= 2.66')
 dependency('gtk4', version: '>= 4.0.0')
 
-base_id = 'live.Lockinspiel'
+base_id = 'live.lockinspiel'
 
 find_program('glib-compile-resources')
 glib_compile_schemas = find_program('glib-compile-schemas')
