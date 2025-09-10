@@ -21,16 +21,16 @@ jobs:
         run: cargo fmt --all -- --check
 
   flatpak:
-    name: Flatpak
+    name: "Flatpak"
     runs-on: ubuntu-latest
     container:
-      image: bilelmoussaoui/flatpak-github-actions:gnome-48
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-48
       options: --privileged
     steps:
     - uses: actions/checkout@v4
-    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v6
+    - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
       with:
-        bundle: lockinspiel-gtk.flatpak
-        manifest-path: build-aux/live.Lockinspiel.Devel.json
+        bundle: palette.flatpak
+        manifest-path: org.gnome.zbrown.Palette.yml
         run-tests: true
         cache-key: flatpak-builder-${{ github.sha }}
