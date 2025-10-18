@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@duckdb/duckdb-wasm": "npm:@duckdb/duckdb-wasm@^1.30.0",
+    "@supabase/functions-js": "jsr:@supabase/functions-js@^2.5.0",
+    "hono": "jsr:@hono/hono"
+  }
+}

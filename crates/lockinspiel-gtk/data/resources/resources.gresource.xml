@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!-- Created with Cambalache 0.96.1 -->
-<gresources>
-  <gresource prefix="/live/lockinspiel/">
-    <file compressed="true" preprocess="xml-stripblanks" alias="gtk/help-overlay.ui">ui/shortcuts.ui</file>
-    <file compressed="true" preprocess="xml-stripblanks">ui/window.ui</file>
-    <file compressed="true">style.css</file>
-  </gresource>
-</gresources>

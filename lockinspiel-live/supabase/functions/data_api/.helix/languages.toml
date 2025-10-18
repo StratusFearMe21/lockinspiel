@@ -1,0 +1,4 @@
+[[language]]
+name = "typescript"
+language-servers = ["deno-lsp"]
+auto-format = true

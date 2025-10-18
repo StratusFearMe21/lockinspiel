@@ -1,0 +1,17 @@
+[package]
+name = "lockinspiel-tinker-terminal"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ansi-to-html = { version = "0.2.2", features = ["lazy-init"] }
+axum = { version = "0.8.4", default-features = false, features = ["http1", "tokio", "tower-log", "tracing", "macros"] }
+color-eyre.workspace = true
+http-body = "1.0.1"
+lockinspiel-common = { version = "0.1.0", path = "../lockinspiel-common" }
+maud = { version = "0.27.0", features = ["axum"] }
+pin-project = "1.1.10"
+tokio.workspace = true
+tower-http = { version = "0.6.6", features = ["catch-panic"] }
+tracing.workspace = true
+jiff.workspace = true

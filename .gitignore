@@ -7,6 +7,8 @@
 /subprojects/lockinspiel-gtk/src/config.rs
 *.ui.in~
 *.ui~
+*.duckdb
+*.duckdb.wal
 /.flatpak/
 /vendor
 /.vscode

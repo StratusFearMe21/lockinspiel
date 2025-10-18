@@ -5,4 +5,17 @@ edition = "2024"
 
 [dependencies]
 r2d2 = "0.8.10"
-rusqlite = "0.37.0"
+color-eyre.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-error.workspace = true
+tracing-subscriber.workspace = true
+reqwest = "0.12.23"
+dotenvy_macro = "0.15.7"
+tower.workspace = true
+thiserror = "2.0.16"
+jiff.workspace = true
+duckdb = { version = "1.4.1", features = ["r2d2", "bundled"] }
+supabase-auth = { version = "0.10.13", features = ["use-rustls"] }
+directories = "6.0.0"
+postgrest = { git = "https://github.com/supabase-community/postgrest-rs", version = "1.6.0" }

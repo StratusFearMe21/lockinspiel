@@ -1,0 +1,54 @@
+[package]
+name = "lockinspiel-egui"
+version = "0.1.0"
+authors = ["Isaac Mills <rooster0055@protonmail.com>"]
+edition = "2024"
+include = ["LICENSE-APACHE", "LICENSE-MIT", "**/*.rs", "Cargo.toml"]
+rust-version = "1.88"
+
+[package.metadata.docs.rs]
+all-features = true
+targets = ["x86_64-unknown-linux-gnu", "wasm32-unknown-unknown"]
+
+[dependencies]
+egui = "0.33.0"
+eframe = { version = "0.33.0", default-features = false, features = [
+    "accesskit",     # Make egui compatible with screen readers. NOTE: adds a lot of dependencies.
+    "default_fonts", # Embed the default egui fonts.
+    "wgpu",          # Use the wgpu rendering backend. Alternative: "glow".
+    "wayland",       # To support Linux (and CI)
+    "x11",           # To support older Linux distributions (restores one of the default features)
+] }
+
+# You only need serde if you want app persistence:
+lockinspiel-common = { version = "0.1.0", path = "../lockinspiel-common" }
+tracing.workspace = true
+tracing-subscriber.workspace = true
+jiff.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "macros"] }
+egui_taffy = "0.10.0"
+
+# native:
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+tracing-error.workspace = true
+color-eyre.workspace = true
+clap-verbosity-flag = { version = "3.0.4", default-features = false, features = ["tracing"] }
+clap = { version = "4.5.49", features = ["derive"] }
+wgpu = { version = "27.0.1", features = ["webgpu", "webgl"] }
+
+# web:
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen-futures = "0.4.50"
+wgpu = { version = "27.0.1", features = ["webgpu", "webgl"] }
+web-sys = "0.3.70"              # to access the DOM (to hide the loading text)
+
+# [patch.crates-io]
+
+# If you want to use the bleeding edge version of egui and eframe:
+# egui = { git = "https://github.com/emilk/egui", branch = "main" }
+# eframe = { git = "https://github.com/emilk/egui", branch = "main" }
+
+# If you fork https://github.com/emilk/egui you can test with:
+# egui = { path = "../egui/crates/egui" }
+# eframe = { path = "../egui/crates/eframe" }
+
